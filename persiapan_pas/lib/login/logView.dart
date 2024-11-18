@@ -73,7 +73,7 @@ class LogView extends StatelessWidget {
                         onPressed: () {
                           logController.loginUser(
                             logController.usernameController.text,
-                            logController.passwordController.text,
+                            logController.passwordController.text,                            
                           );
                         },
                         style: ElevatedButton.styleFrom(

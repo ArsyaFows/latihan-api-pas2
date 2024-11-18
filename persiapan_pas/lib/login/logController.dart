@@ -7,7 +7,6 @@ class LogController extends GetxController {
   var isLoading = false.obs;
   var postList = <LogModel>[].obs;
 
-  // Hanya butuh username dan password untuk login
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
 
@@ -20,13 +19,14 @@ class LogController extends GetxController {
       postList.add(response);
       
       if (response.status) {
-        // Jika login berhasil, bisa tambahkan navigasi ke halaman berikutnya di sini
         Get.snackbar(
           'Success',
           'Login berhasil',
           backgroundColor: Colors.green,
           colorText: Colors.white,
         );
+        
+        Get.offAllNamed('/anime');
       }
     } catch (e) {
       print(e);
